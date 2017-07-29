@@ -18,7 +18,11 @@ class FetchManager: NSObject {
         super.init()
         
         NotificationCenter.default.addObserver(forName: .UIApplicationDidBecomeActive, object: nil, queue: OperationQueue.main) { (not) -> Void in
-            FetchManager.getItems(completion: nil)
+            /* Uncomment the next line if you want to fetch data when the app
+                comes from the background
+            */
+            
+            //FetchManager.getItems(completion: nil)
         }
     }
     
