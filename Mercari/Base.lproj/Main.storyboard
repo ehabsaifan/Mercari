@@ -16,11 +16,11 @@
         <scene sceneID="I7H-7V-h5Y">
             <objects>
                 <collectionViewController id="0Jx-1i-psS" customClass="ItemsCollectionViewController" customModule="Mercari" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="whd-3K-2RK">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="whd-3K-2RK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="8" minimumInteritemSpacing="0.0" id="QcI-mG-Qd8">
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="QcI-mG-Qd8">
                             <size key="itemSize" width="124" height="122"/>
                             <size key="headerReferenceSize" width="0.0" height="20"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -28,14 +28,17 @@
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ItemCell" id="Vmo-fy-KaI" userLabel="ItemCell" customClass="ItemCollectionViewCell" customModule="Mercari" customModuleProvider="target">
-                                <rect key="frame" x="10" y="33" width="83" height="99"/>
+                                <rect key="frame" x="10" y="33" width="83" height="111"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="83" height="99"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="83" height="111"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Men2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mM5-Tp-Ig6">
-                                            <rect key="frame" x="0.0" y="91" width="83" height="8"/>
+                                            <rect key="frame" x="0.0" y="91" width="83" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="xpC-KO-66l"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" red="0.24319042439999999" green="0.24319042439999999" blue="0.24319042439999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
@@ -53,12 +56,12 @@
                                             <rect key="frame" x="31.5" y="31.5" width="20" height="20"/>
                                         </activityIndicatorView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DqW-bB-9UE">
-                                            <rect key="frame" x="4" y="57" width="35.5" height="22"/>
+                                            <rect key="frame" x="4" y="58" width="33" height="21"/>
                                             <color key="backgroundColor" red="0.24319042444229122" green="0.24319042444229122" blue="0.24319042444229122" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="22" id="5Jw-el-cX2"/>
+                                                <constraint firstAttribute="height" constant="21" id="5Jw-el-cX2"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -81,7 +84,7 @@
                                     <constraint firstItem="IlT-7l-ag1" firstAttribute="height" secondItem="rRO-aC-XOX" secondAttribute="height" multiplier="1:2" id="qyF-fT-8Rg"/>
                                     <constraint firstItem="kSE-jc-xAQ" firstAttribute="centerY" secondItem="rRO-aC-XOX" secondAttribute="centerY" id="xcK-l8-VZh"/>
                                 </constraints>
-                                <size key="customSize" width="83" height="99"/>
+                                <size key="customSize" width="83" height="111"/>
                                 <connections>
                                     <outlet property="activityIndicator" destination="kSE-jc-xAQ" id="z1b-zn-XRP"/>
                                     <outlet property="nameLabel" destination="mM5-Tp-Ig6" id="G7h-96-sZf"/>

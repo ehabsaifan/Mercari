@@ -28,14 +28,6 @@ class ItemCollectionViewCell: UICollectionViewCell {
         }// end didSet
     }
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
-        if let height = self.priceLabel?.frame.height {
-            self.priceLabel.makeCircularEdges(radius: height/2, border: false)
-        }
-    }
-    
     private func updateUI(item: Item) {
         let name = item.name ?? "N/A"
         self.nameLabel?.text  = name
@@ -48,8 +40,10 @@ class ItemCollectionViewCell: UICollectionViewCell {
         default:
             self.statusImageView?.image = nil
         }
+        if let height = self.priceLabel?.frame.height {
+            self.priceLabel.makeCircularEdges(radius: height/2, border: false)
+        }
         self.fechImage()
-        self.layoutIfNeeded()
     }
     
     //Remove previouse image if existed

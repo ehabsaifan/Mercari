@@ -111,6 +111,18 @@
 			name = "Collection View";
 			sourceTree = "<group>";
 		};
+		CECF530C1F2D3E4500A72B98 /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				ECE7CAD91EC290350038B6A5 /* Main.storyboard */,
+				ECE7CADC1EC290350038B6A5 /* Assets.xcassets */,
+				ECE7CADE1EC290350038B6A5 /* LaunchScreen.storyboard */,
+				ECE7CAE11EC290350038B6A5 /* Info.plist */,
+				ECE7CAF51EC2921C0038B6A5 /* all.json */,
+			);
+			name = Others;
+			sourceTree = "<group>";
+		};
 		ECE7CAC91EC290350038B6A5 = {
 			isa = PBXGroup;
 			children = (
@@ -137,11 +149,7 @@
 				CECF52F81F2C0D8600A72B98 /* Managers */,
 				CECF53061F2CEFD200A72B98 /* Models */,
 				CECF52FB1F2C0DCC00A72B98 /* Helpers */,
-				ECE7CAD91EC290350038B6A5 /* Main.storyboard */,
-				ECE7CADC1EC290350038B6A5 /* Assets.xcassets */,
-				ECE7CADE1EC290350038B6A5 /* LaunchScreen.storyboard */,
-				ECE7CAE11EC290350038B6A5 /* Info.plist */,
-				ECE7CAF51EC2921C0038B6A5 /* all.json */,
+				CECF530C1F2D3E4500A72B98 /* Others */,
 			);
 			path = Mercari;
 			sourceTree = "<group>";
@@ -433,6 +441,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.mercari.Mercari;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -447,6 +456,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.mercari.Mercari;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

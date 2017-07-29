@@ -67,15 +67,16 @@ class ItemsCollectionViewController: UICollectionViewController, UICollectionVie
         return cell
     }
 
-    // MARK: UICollectionViewDelegate
+    // MARK: UICollectionViewDelegateFlowLayout
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         if self.items.count == 0 {
             return CGSize(width: collectionView.bounds.width-20, height: collectionView.bounds.height-20)
         }
-        let width = (collectionView.bounds.width - 20)/3 - 8
-        let cellSize = CGSize(width: width, height: 140)
+
+        let minWidth = (320 - 20)/3 - 8
+        let cellSize = CGSize(width: minWidth, height: 130)
         return cellSize
     }
     

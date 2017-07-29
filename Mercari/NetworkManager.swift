@@ -25,20 +25,8 @@ class NetworkManager: NSObject {
     
     //Convert Data into json
     internal func parseJSON(from data: Data) -> json? {
-        do {
-            let json = try JSONSerialization.jsonObject(with: data, options: []) as![String: Any]
-            return json as json
-        } catch {
-            return nil
-        }
-    }
-    
-    internal func downloadRequest(_ url: NSURL,completionHandler: @escaping (URL?, URLResponse?, Error?) -> Void) {
-        let request = URLRequest(url: url as URL)
-        let task = self.sessionManager.downloadTask(with: request) { (url, response, error) in
-            completionHandler(url, response, error)
-        }
-        task.resume()
+        let json = try? JSONSerialization.jsonObject(with: data, options: []) as! json
+        return json
     }
     
     //Get data from a resource
@@ -49,6 +37,14 @@ class NetworkManager: NSObject {
         return nil
     }
     
+    internal func downloadRequest(_ url: NSURL,completionHandler: @escaping (URL?, URLResponse?, Error?) -> Void) {
+        let request = URLRequest(url: url as URL)
+        let task = self.sessionManager.downloadTask(with: request) { (url, response, error) in
+            completionHandler(url, response, error)
+        }
+        task.resume()
+    }
+
 }
 
 extension NetworkManager{
