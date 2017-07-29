@@ -10,7 +10,7 @@
 
 /*
     ****************************
-        Place Constants
+        all.json Constants
     ****************************
 */
 
@@ -25,15 +25,12 @@ let PRICE = "price" // 5,
 
 /*
  ****************************
-    Enums
+    Public Enums
  ****************************
  */
 
+///Custom Notifications
 enum CustomNotification {
     case ItemsHasBeenFetched
 }
 
-enum ItemStatus: String {
-    case on_sale
-    case sold_out
-}

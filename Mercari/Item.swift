@@ -8,6 +8,12 @@
 
 import Foundation
 
+///Item status
+enum ItemStatus: String {
+    case on_sale
+    case sold_out
+}
+
 struct Item {
     
     var id: String?          //"mall46",
