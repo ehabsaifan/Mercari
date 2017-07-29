@@ -22,6 +22,13 @@ class ItemsCollectionViewController: UICollectionViewController, UICollectionVie
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        NotificationCenter.default.addObserver(forName: Notification.Name(rawValue: "\(CustomNotification.ItemsHasBeenFetched)"), object: nil, queue: OperationQueue.main) { (not) -> Void in
+            self.items = FetchManager.shared.items
+        }
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
 
     /*
@@ -49,14 +56,13 @@ class ItemsCollectionViewController: UICollectionViewController, UICollectionVie
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: defaultIdentifier, for: indexPath) as! DefaultCollectionViewCell
-        
-        if items.count != 0 {
+        if self.items.count != 0 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ItemCollectionViewCell
-            
+            cell.item = self.items[indexPath.row]
+            return cell
         }
         
-        // Configure the cell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: defaultIdentifier, for: indexPath) as! DefaultCollectionViewCell
     
         return cell
     }
@@ -66,14 +72,11 @@ class ItemsCollectionViewController: UICollectionViewController, UICollectionVie
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         if self.items.count == 0 {
-            print("here....")
-            return CGSize(width: (self.collectionView?.bounds.width)!, height: (self.collectionView?.bounds.height)!)
+            return CGSize(width: collectionView.bounds.width-20, height: collectionView.bounds.height-20)
         }
-        print("Not here....")
-        let minCellWidth:CGFloat = 98.6
-        let h = minCellWidth + 45
-        return CGSize(width: minCellWidth, height: h)
+        let width = (collectionView.bounds.width - 20)/3 - 8
+        let cellSize = CGSize(width: width, height: 140)
+        return cellSize
     }
-    
     
 }

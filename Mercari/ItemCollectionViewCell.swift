@@ -32,29 +32,30 @@ class ItemCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         
         if let height = self.priceLabel?.frame.height {
-            self.priceLabel.makeCircularEdges(radius: height/2)
+            self.priceLabel.makeCircularEdges(radius: height/2, border: false)
         }
     }
     
     private func updateUI(item: Item) {
         let name = item.name ?? "N/A"
         self.nameLabel?.text  = name
-        self.priceLabel?.text = "$\(item.price ?? 0)"
+        self.priceLabel?.text = "  $\(item.price ?? 0)  "
         
         switch item.status {
         case .some(.sold_out):
             self.statusImageView?.image = UIImage(named: "sold")
+            self.statusImageView?.makeCircularEdges(radius: 4, border: false)
         default:
             self.statusImageView?.image = nil
         }
         self.fechImage()
+        self.layoutIfNeeded()
     }
     
     //Remove previouse image if existed
     //Fetch Image from cash if existed
     //Check if the image belongs to the cell that are currently displayed
     private func fechImage(){
-        self.photo = nil
         guard let path = self.item?.photo, let id = self.item?.id else{
             return
         }
@@ -67,6 +68,7 @@ class ItemCollectionViewCell: UICollectionViewCell {
                 return
             }
             if self.imageURL == path {
+                self.photo?.makeCircularEdges(radius: 4, border: false)
                 self.photo?.image = image
             }
         }

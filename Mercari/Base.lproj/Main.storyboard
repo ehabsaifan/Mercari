@@ -8,6 +8,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -15,71 +16,72 @@
         <scene sceneID="I7H-7V-h5Y">
             <objects>
                 <collectionViewController id="0Jx-1i-psS" customClass="ItemsCollectionViewController" customModule="Mercari" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="whd-3K-2RK">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="whd-3K-2RK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="QcI-mG-Qd8">
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="8" minimumInteritemSpacing="0.0" id="QcI-mG-Qd8">
                             <size key="itemSize" width="124" height="122"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="headerReferenceSize" width="0.0" height="20"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <inset key="sectionInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ItemCell" id="Vmo-fy-KaI" userLabel="ItemCell" customClass="ItemCollectionViewCell" customModule="Mercari" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="140" height="179"/>
+                                <rect key="frame" x="10" y="33" width="83" height="99"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="140" height="179"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="83" height="99"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Men2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mM5-Tp-Ig6">
-                                            <rect key="frame" x="0.0" y="148" width="140" height="31"/>
-                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
-                                            <nil key="textColor"/>
+                                            <rect key="frame" x="0.0" y="91" width="83" height="8"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.24319042439999999" green="0.24319042439999999" blue="0.24319042439999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rRO-aC-XOX">
-                                            <rect key="frame" x="0.0" y="0.0" width="140" height="140"/>
-                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rRO-aC-XOX">
+                                            <rect key="frame" x="0.0" y="0.0" width="83" height="83"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="140" id="QW5-VL-Oci"/>
                                                 <constraint firstAttribute="width" secondItem="rRO-aC-XOX" secondAttribute="height" multiplier="1:1" id="d3X-ay-fZH"/>
                                             </constraints>
                                         </imageView>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IlT-7l-ag1">
-                                            <rect key="frame" x="0.0" y="0.0" width="140" height="140"/>
+                                            <rect key="frame" x="41.5" y="0.0" width="41.5" height="41.5"/>
                                         </imageView>
                                         <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="kSE-jc-xAQ">
-                                            <rect key="frame" x="60" y="60" width="20" height="20"/>
+                                            <rect key="frame" x="31.5" y="31.5" width="20" height="20"/>
                                         </activityIndicatorView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DqW-bB-9UE">
-                                            <rect key="frame" x="4" y="115" width="42" height="21"/>
-                                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <rect key="frame" x="4" y="57" width="35.5" height="22"/>
+                                            <color key="backgroundColor" red="0.24319042444229122" green="0.24319042444229122" blue="0.24319042444229122" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="22" id="5Jw-el-cX2"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                 </view>
                                 <constraints>
+                                    <constraint firstItem="IlT-7l-ag1" firstAttribute="trailing" secondItem="rRO-aC-XOX" secondAttribute="trailing" id="0El-fx-EVQ"/>
                                     <constraint firstAttribute="trailing" secondItem="rRO-aC-XOX" secondAttribute="trailing" id="A5f-cZ-Wob"/>
                                     <constraint firstItem="DqW-bB-9UE" firstAttribute="leading" secondItem="rRO-aC-XOX" secondAttribute="leading" constant="4" id="BhK-ii-vjG"/>
                                     <constraint firstItem="rRO-aC-XOX" firstAttribute="leading" secondItem="Vmo-fy-KaI" secondAttribute="leading" id="COz-IP-1OC"/>
                                     <constraint firstItem="rRO-aC-XOX" firstAttribute="top" secondItem="Vmo-fy-KaI" secondAttribute="top" id="MW3-dy-02a"/>
                                     <constraint firstItem="kSE-jc-xAQ" firstAttribute="centerX" secondItem="rRO-aC-XOX" secondAttribute="centerX" id="NGU-85-1ZS"/>
                                     <constraint firstItem="mM5-Tp-Ig6" firstAttribute="top" secondItem="rRO-aC-XOX" secondAttribute="bottom" constant="8" symbolic="YES" id="PXF-x5-Jk6"/>
-                                    <constraint firstItem="IlT-7l-ag1" firstAttribute="centerX" secondItem="rRO-aC-XOX" secondAttribute="centerX" id="V09-hp-Tih"/>
-                                    <constraint firstItem="IlT-7l-ag1" firstAttribute="centerY" secondItem="rRO-aC-XOX" secondAttribute="centerY" id="cev-nf-M2e"/>
                                     <constraint firstAttribute="trailing" secondItem="mM5-Tp-Ig6" secondAttribute="trailing" id="eaX-he-3Gp"/>
-                                    <constraint firstAttribute="bottom" secondItem="mM5-Tp-Ig6" secondAttribute="bottom" id="fGD-Fx-1kU"/>
-                                    <constraint firstItem="IlT-7l-ag1" firstAttribute="width" secondItem="rRO-aC-XOX" secondAttribute="width" id="ghL-pm-BVd"/>
+                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="mM5-Tp-Ig6" secondAttribute="bottom" id="fGD-Fx-1kU"/>
+                                    <constraint firstItem="IlT-7l-ag1" firstAttribute="top" secondItem="rRO-aC-XOX" secondAttribute="top" id="fMm-Qh-fBj"/>
+                                    <constraint firstItem="IlT-7l-ag1" firstAttribute="width" secondItem="rRO-aC-XOX" secondAttribute="width" multiplier="1:2" id="ghL-pm-BVd"/>
                                     <constraint firstItem="DqW-bB-9UE" firstAttribute="bottom" secondItem="rRO-aC-XOX" secondAttribute="bottom" constant="-4" id="iwj-cr-5Zq"/>
                                     <constraint firstItem="mM5-Tp-Ig6" firstAttribute="leading" secondItem="Vmo-fy-KaI" secondAttribute="leading" id="oiI-83-Qwj"/>
-                                    <constraint firstItem="IlT-7l-ag1" firstAttribute="height" secondItem="rRO-aC-XOX" secondAttribute="height" id="qyF-fT-8Rg"/>
+                                    <constraint firstItem="IlT-7l-ag1" firstAttribute="height" secondItem="rRO-aC-XOX" secondAttribute="height" multiplier="1:2" id="qyF-fT-8Rg"/>
                                     <constraint firstItem="kSE-jc-xAQ" firstAttribute="centerY" secondItem="rRO-aC-XOX" secondAttribute="centerY" id="xcK-l8-VZh"/>
                                 </constraints>
-                                <size key="customSize" width="140" height="179"/>
+                                <size key="customSize" width="83" height="99"/>
                                 <connections>
                                     <outlet property="activityIndicator" destination="kSE-jc-xAQ" id="z1b-zn-XRP"/>
                                     <outlet property="nameLabel" destination="mM5-Tp-Ig6" id="G7h-96-sZf"/>
@@ -89,14 +91,14 @@
                                 </connections>
                             </collectionViewCell>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DefaultCell" id="oil-Ru-Cuu" customClass="DefaultCollectionViewCell" customModule="Mercari" customModuleProvider="target">
-                                <rect key="frame" x="150" y="29" width="124" height="122"/>
+                                <rect key="frame" x="93" y="20" width="116" height="125"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="124" height="122"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="116" height="125"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Currently there are no items to be displayed!" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QHK-JU-sVy">
-                                            <rect key="frame" x="8" y="50.5" width="108" height="21"/>
+                                            <rect key="frame" x="8" y="52" width="100" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="1" green="0.56175536940000004" blue="0.1150179585" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
@@ -109,11 +111,16 @@
                                     <constraint firstAttribute="trailingMargin" secondItem="QHK-JU-sVy" secondAttribute="trailing" id="wqa-CU-G8m"/>
                                     <constraint firstItem="QHK-JU-sVy" firstAttribute="centerY" secondItem="oil-Ru-Cuu" secondAttribute="centerY" id="z9e-q2-7dB"/>
                                 </constraints>
+                                <size key="customSize" width="116" height="125"/>
                                 <connections>
                                     <outlet property="label" destination="QHK-JU-sVy" id="I30-lu-HEC"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="GPR-pp-k3S">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </collectionReusableView>
                         <connections>
                             <outlet property="dataSource" destination="0Jx-1i-psS" id="1rN-bb-auc"/>
                             <outlet property="delegate" destination="0Jx-1i-psS" id="5HO-d5-7NF"/>
@@ -122,7 +129,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k0C-bF-h2S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1031.2" y="146.17691154422789"/>
+            <point key="canvasLocation" x="653.60000000000002" y="-5.8470764617691158"/>
         </scene>
     </scenes>
 </document>

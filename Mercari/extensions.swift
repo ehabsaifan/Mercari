@@ -34,9 +34,9 @@ extension UIImageView{
 }
 
 extension UIView{
-    func makeCircularEdges(radius : CGFloat? = 4){
+    func makeCircularEdges(radius : CGFloat? = 4, border: Bool = true){
         self.layer.borderColor = UIColor.lightGray.cgColor
-        self.layer.borderWidth = 1.0
+        self.layer.borderWidth = border ? 1: 0
         if let radius = radius{
             self.layer.cornerRadius = radius
         }
