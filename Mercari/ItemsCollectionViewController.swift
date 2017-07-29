@@ -19,9 +19,13 @@ class ItemsCollectionViewController: UICollectionViewController, UICollectionVie
         }
     }
     
+    var refreshController = UIRefreshControl()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        self.configureRefreshController()
+        
         NotificationCenter.default.addObserver(forName: Notification.Name(rawValue: "\(CustomNotification.ItemsHasBeenFetched)"), object: nil, queue: OperationQueue.main) { (not) -> Void in
             self.items = FetchManager.shared.items
         }
@@ -29,6 +33,18 @@ class ItemsCollectionViewController: UICollectionViewController, UICollectionVie
     
     deinit {
         NotificationCenter.default.removeObserver(self)
+    }
+    
+    private func configureRefreshController() {
+        self.refreshController.tintColor = UIColor.blue
+        self.refreshController.addTarget(self, action: #selector(fetchData), for: .valueChanged)
+        self.collectionView?.addSubview(self.refreshController)
+    }
+    
+    @objc private func fetchData(){
+        FetchManager.getItems { [unowned self] (suceess, error) in
+            self.refreshController.endRefreshing()
+        }
     }
 
     /*
