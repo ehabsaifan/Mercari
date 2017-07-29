@@ -13,6 +13,8 @@
 		CECF52FF1F2C0DF500A72B98 /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF52FD1F2C0DF500A72B98 /* extensions.swift */; };
 		CECF53011F2C11C900A72B98 /* ItemsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF53001F2C11C900A72B98 /* ItemsCollectionViewController.swift */; };
 		CECF53031F2C124500A72B98 /* DefaultCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF53021F2C124500A72B98 /* DefaultCollectionViewCell.swift */; };
+		CECF53051F2CEE2F00A72B98 /* FetchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF53041F2CEE2F00A72B98 /* FetchManager.swift */; };
+		CECF53081F2CEFF900A72B98 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF53071F2CEFF900A72B98 /* Item.swift */; };
 		ECE7CAD61EC290350038B6A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE7CAD51EC290350038B6A5 /* AppDelegate.swift */; };
 		ECE7CADB1EC290350038B6A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECE7CAD91EC290350038B6A5 /* Main.storyboard */; };
 		ECE7CADD1EC290350038B6A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECE7CADC1EC290350038B6A5 /* Assets.xcassets */; };
@@ -38,6 +40,8 @@
 		CECF52FD1F2C0DF500A72B98 /* extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
 		CECF53001F2C11C900A72B98 /* ItemsCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsCollectionViewController.swift; sourceTree = "<group>"; };
 		CECF53021F2C124500A72B98 /* DefaultCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultCollectionViewCell.swift; sourceTree = "<group>"; };
+		CECF53041F2CEE2F00A72B98 /* FetchManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchManager.swift; sourceTree = "<group>"; };
+		CECF53071F2CEFF900A72B98 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		ECE7CAD21EC290350038B6A5 /* Mercari.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mercari.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECE7CAD51EC290350038B6A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ECE7CADA1EC290350038B6A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -72,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				CECF52F61F2C0D5C00A72B98 /* ImageManager.swift */,
+				CECF53041F2CEE2F00A72B98 /* FetchManager.swift */,
 				CECF52F91F2C0D9D00A72B98 /* NetworkManager.swift */,
 			);
 			name = Managers;
@@ -84,6 +89,14 @@
 				CECF52FD1F2C0DF500A72B98 /* extensions.swift */,
 			);
 			name = Helpers;
+			sourceTree = "<group>";
+		};
+		CECF53061F2CEFD200A72B98 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CECF53071F2CEFF900A72B98 /* Item.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		ECE7CAC91EC290350038B6A5 = {
@@ -110,8 +123,9 @@
 				ECE7CAD51EC290350038B6A5 /* AppDelegate.swift */,
 				CECF53001F2C11C900A72B98 /* ItemsCollectionViewController.swift */,
 				CECF53021F2C124500A72B98 /* DefaultCollectionViewCell.swift */,
-				CECF52FB1F2C0DCC00A72B98 /* Helpers */,
 				CECF52F81F2C0D8600A72B98 /* Managers */,
+				CECF53061F2CEFD200A72B98 /* Models */,
+				CECF52FB1F2C0DCC00A72B98 /* Helpers */,
 				ECE7CAD91EC290350038B6A5 /* Main.storyboard */,
 				ECE7CADC1EC290350038B6A5 /* Assets.xcassets */,
 				ECE7CADE1EC290350038B6A5 /* LaunchScreen.storyboard */,
@@ -257,7 +271,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CECF52FE1F2C0DF500A72B98 /* Constants.swift in Sources */,
+				CECF53081F2CEFF900A72B98 /* Item.swift in Sources */,
 				CECF53011F2C11C900A72B98 /* ItemsCollectionViewController.swift in Sources */,
+				CECF53051F2CEE2F00A72B98 /* FetchManager.swift in Sources */,
 				CECF52FA1F2C0D9D00A72B98 /* NetworkManager.swift in Sources */,
 				CECF52F71F2C0D5C00A72B98 /* ImageManager.swift in Sources */,
 				CECF53031F2C124500A72B98 /* DefaultCollectionViewCell.swift in Sources */,
