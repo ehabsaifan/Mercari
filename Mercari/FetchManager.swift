@@ -10,7 +10,7 @@ import UIKit
 
 class FetchManager: NSObject {
     
-    var places = [Place]()
+    var places = [Item]()
     
     static var shared = FetchManager()
     
@@ -18,7 +18,7 @@ class FetchManager: NSObject {
         super.init()
         
         NotificationCenter.default.addObserver(forName: .UIApplicationDidBecomeActive, object: nil, queue: OperationQueue.main) { (not) -> Void in
-            FetchManager.getPlaces(completion: nil)
+            FetchManager.getItems(completion: nil)
         }
     }
     
@@ -26,18 +26,27 @@ class FetchManager: NSObject {
         NotificationCenter.default.removeObserver(self)
     }
     
-    class func getPlaces(completion: successResponse) {
-        NetworkManager.getPlaces() { (json, error) in
+    class func getItems(completion: successResponse) {
+        NetworkManager.getItems() { (json, error) in
+            
             guard let error = error else{
+                
+                guard let result = json?["result"] as? String, result.lowercased() == "ok" else {
+                    if let completion = completion {
+                        completion(true, nil)
+                    }
+                    return
+                }// end guard result
+                
                 if let jsonList = json?["data"] as? [[String: AnyObject]]{
-                    self.shared.places = jsonList.map({Place(info: $0)})
+                    self.shared.places = jsonList.map({Item(info: $0)})
                 }
                 if let completion = completion {
                     completion(true, nil)
                 }
-                FetchManager.shared.postNotification(notification: CustomNotification.PlaceesHasBeenFetched)
+                FetchManager.shared.postNotification(notification: CustomNotification.ItemsHasBeenFetched)
                 return
-            }
+            }// end guard error
             
             if let completion = completion {
                 completion(false, error)
