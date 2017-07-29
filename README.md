@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # mercari-ios-test
 For Technical interview
 
@@ -22,3 +23,7 @@ Estimated time commitment: 2 hours
 # Mercari
 # Mercari
 # Mercari
+=======
+# Mercari
+Challenge Application for Mercari
+>>>>>>> 9cdbeef4566bbb2b4f027497b8c500bf97a1d97a
