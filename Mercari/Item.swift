@@ -25,7 +25,7 @@ struct Item {
         self.photo = info[PHOTO] as? String ?? ""
         self.n_comments = info[N_COMMENTS] as? Int
         self.n_likes = info[N_LIKES] as? Int
-        self.price = info[PRICE] as? Int
+        self.price = info[PRICE] as? Int 
     }
 }
 

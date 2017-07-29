@@ -26,8 +26,8 @@ class NetworkManager: NSObject {
     //Convert Data into json
     internal func parseJSON(from data: Data) -> json? {
         do {
-            let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: AnyObject]
-            return json
+            let json = try JSONSerialization.jsonObject(with: data, options: []) as![String: Any]
+            return json as json
         } catch {
             return nil
         }
@@ -43,7 +43,10 @@ class NetworkManager: NSObject {
     
     //Get data from a resource
     internal func getData(forResourse resource: String, ofType type: String) -> Data? {
-        return Bundle.main.path(forResource: resource, ofType: type)?.data(using: .utf8)
+        if let file = Bundle.main.url(forResource: resource, withExtension: type){
+            return try? Data(contentsOf: file)
+        }
+        return nil
     }
     
 }
@@ -51,8 +54,8 @@ class NetworkManager: NSObject {
 extension NetworkManager{
     
     class func getItems(completion : jsonResponse){
-        if let data = NetworkManager.currentManager.getData(forResourse:"all", ofType: "json"),
-            let json = NetworkManager.currentManager.parseJSON(from: data) {
+        if let data = NetworkManager.currentManager.getData(forResourse:"all", ofType: "json") {
+            let json = NetworkManager.currentManager.parseJSON(from: data)
             self.completion(json: json, error: nil, completion: completion)
         }else{
             let error = NSError.error(message: "Error parse data")

@@ -10,7 +10,7 @@ import UIKit
 
 class FetchManager: NSObject {
     
-    var places = [Item]()
+    var items = [Item]()
     
     static var shared = FetchManager()
     
@@ -39,7 +39,7 @@ class FetchManager: NSObject {
                 }// end guard result
                 
                 if let jsonList = json?["data"] as? [[String: AnyObject]]{
-                    self.shared.places = jsonList.map({Item(info: $0)})
+                    self.shared.items = jsonList.map({Item(info: $0)})
                 }
                 if let completion = completion {
                     completion(true, nil)

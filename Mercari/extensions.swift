@@ -13,7 +13,7 @@ extension NSError{
         let userInfo = [
             NSLocalizedDescriptionKey : NSLocalizedString(message, comment: "")
         ]
-        return NSError(domain: RootPath, code: code, userInfo: userInfo)
+        return NSError(domain: "Mercari App", code: code, userInfo: userInfo)
     }
 }
 
@@ -33,13 +33,14 @@ extension UIImageView{
     }
 }
 
-extension UIButton{
-    func makeCircularEdges(radius : CGFloat? = 4){
+extension UIView{
+    func makeCircularEdges(radius : CGFloat? = 4, border: Bool = true){
         self.layer.borderColor = UIColor.lightGray.cgColor
-        self.layer.borderWidth = 1.0
+        self.layer.borderWidth = border ? 1: 0
         if let radius = radius{
             self.layer.cornerRadius = radius
         }
+        self.clipsToBounds = true
     }
     
     func makeCircular(){

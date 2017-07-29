@@ -15,6 +15,7 @@
 		CECF53031F2C124500A72B98 /* DefaultCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF53021F2C124500A72B98 /* DefaultCollectionViewCell.swift */; };
 		CECF53051F2CEE2F00A72B98 /* FetchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF53041F2CEE2F00A72B98 /* FetchManager.swift */; };
 		CECF53081F2CEFF900A72B98 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF53071F2CEFF900A72B98 /* Item.swift */; };
+		CECF530B1F2D007F00A72B98 /* ItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF530A1F2D007F00A72B98 /* ItemCollectionViewCell.swift */; };
 		ECE7CAD61EC290350038B6A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE7CAD51EC290350038B6A5 /* AppDelegate.swift */; };
 		ECE7CADB1EC290350038B6A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECE7CAD91EC290350038B6A5 /* Main.storyboard */; };
 		ECE7CADD1EC290350038B6A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECE7CADC1EC290350038B6A5 /* Assets.xcassets */; };
@@ -42,6 +43,7 @@
 		CECF53021F2C124500A72B98 /* DefaultCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultCollectionViewCell.swift; sourceTree = "<group>"; };
 		CECF53041F2CEE2F00A72B98 /* FetchManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchManager.swift; sourceTree = "<group>"; };
 		CECF53071F2CEFF900A72B98 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		CECF530A1F2D007F00A72B98 /* ItemCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		ECE7CAD21EC290350038B6A5 /* Mercari.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mercari.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECE7CAD51EC290350038B6A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ECE7CADA1EC290350038B6A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -99,6 +101,16 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		CECF53091F2D005D00A72B98 /* Collection View */ = {
+			isa = PBXGroup;
+			children = (
+				CECF53001F2C11C900A72B98 /* ItemsCollectionViewController.swift */,
+				CECF53021F2C124500A72B98 /* DefaultCollectionViewCell.swift */,
+				CECF530A1F2D007F00A72B98 /* ItemCollectionViewCell.swift */,
+			);
+			name = "Collection View";
+			sourceTree = "<group>";
+		};
 		ECE7CAC91EC290350038B6A5 = {
 			isa = PBXGroup;
 			children = (
@@ -121,8 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				ECE7CAD51EC290350038B6A5 /* AppDelegate.swift */,
-				CECF53001F2C11C900A72B98 /* ItemsCollectionViewController.swift */,
-				CECF53021F2C124500A72B98 /* DefaultCollectionViewCell.swift */,
+				CECF53091F2D005D00A72B98 /* Collection View */,
 				CECF52F81F2C0D8600A72B98 /* Managers */,
 				CECF53061F2CEFD200A72B98 /* Models */,
 				CECF52FB1F2C0DCC00A72B98 /* Helpers */,
@@ -252,16 +263,13 @@
 			files = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/ReactiveCocoa.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/ReactiveSwift.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
 			);
 			name = "Copy Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
+			shellScript = "";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -275,6 +283,7 @@
 				CECF53011F2C11C900A72B98 /* ItemsCollectionViewController.swift in Sources */,
 				CECF53051F2CEE2F00A72B98 /* FetchManager.swift in Sources */,
 				CECF52FA1F2C0D9D00A72B98 /* NetworkManager.swift in Sources */,
+				CECF530B1F2D007F00A72B98 /* ItemCollectionViewCell.swift in Sources */,
 				CECF52F71F2C0D5C00A72B98 /* ImageManager.swift in Sources */,
 				CECF53031F2C124500A72B98 /* DefaultCollectionViewCell.swift in Sources */,
 				ECE7CAD61EC290350038B6A5 /* AppDelegate.swift in Sources */,
@@ -418,17 +427,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = VF725LAA9U;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
-					"$(PROJECT_DIR)/Carthage/Build/tvOS",
-					"$(PROJECT_DIR)/Carthage/Build/watchOS",
-					"$(PROJECT_DIR)/Carthage/Checkouts/Result/Carthage/Build/iOS",
-					"$(PROJECT_DIR)/Carthage/Checkouts/Result/Carthage/Build/Mac",
-					"$(PROJECT_DIR)/Carthage/Checkouts/Result/Carthage/Build/tvOS",
-					"$(PROJECT_DIR)/Carthage/Checkouts/Result/Carthage/Build/watchOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Mercari/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mercari.Mercari;
@@ -442,17 +441,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = VF725LAA9U;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
-					"$(PROJECT_DIR)/Carthage/Build/tvOS",
-					"$(PROJECT_DIR)/Carthage/Build/watchOS",
-					"$(PROJECT_DIR)/Carthage/Checkouts/Result/Carthage/Build/iOS",
-					"$(PROJECT_DIR)/Carthage/Checkouts/Result/Carthage/Build/Mac",
-					"$(PROJECT_DIR)/Carthage/Checkouts/Result/Carthage/Build/tvOS",
-					"$(PROJECT_DIR)/Carthage/Checkouts/Result/Carthage/Build/watchOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Mercari/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mercari.Mercari;
