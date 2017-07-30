@@ -1,6 +1,9 @@
 //
 //  MercariTests.swift
-//  MercariTests
+//  Mercari
+//
+//  Created by Ehab Saifan on 7/29/17.
+//  Copyright © 2017 Mercari. All rights reserved.
 //
 
 import XCTest
@@ -18,14 +21,26 @@ class MercariTests: XCTestCase {
         super.tearDown()
     }
     
-    func testFetchingDataThroughtNetworkManager() {
+    func testGetItemsInFetchManager() {
+        // This is an example of a functional test case.
+        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        FetchManager.getItems { (success, error) in
+            XCTAssertTrue(success == true, "Error getting items in FetchManager")
+        }
+    }
+    
+    func testGetItemsInNetworkManager() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         NetworkManager.getItems { (json, error) in
-            XCTAssertTrue(error == nil, "Error fetching data in NetworkManager")
+            XCTAssertTrue(json != nil, "Error getting items in NetworkManager")
         }
+    }
+    
+    func testDownloadImage() {
         
     }
+    
     
     func testPerformanceExample() {
         // This is an example of a performance test case.

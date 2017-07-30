@@ -16,11 +16,11 @@
 		CECF53051F2CEE2F00A72B98 /* FetchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF53041F2CEE2F00A72B98 /* FetchManager.swift */; };
 		CECF53081F2CEFF900A72B98 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF53071F2CEFF900A72B98 /* Item.swift */; };
 		CECF530B1F2D007F00A72B98 /* ItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF530A1F2D007F00A72B98 /* ItemCollectionViewCell.swift */; };
+		CECF530F1F2D5B9A00A72B98 /* MercariTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF530E1F2D5B9A00A72B98 /* MercariTests.swift */; };
 		ECE7CAD61EC290350038B6A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE7CAD51EC290350038B6A5 /* AppDelegate.swift */; };
 		ECE7CADB1EC290350038B6A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECE7CAD91EC290350038B6A5 /* Main.storyboard */; };
 		ECE7CADD1EC290350038B6A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECE7CADC1EC290350038B6A5 /* Assets.xcassets */; };
 		ECE7CAE01EC290350038B6A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECE7CADE1EC290350038B6A5 /* LaunchScreen.storyboard */; };
-		ECE7CAEB1EC290350038B6A5 /* MercariTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE7CAEA1EC290350038B6A5 /* MercariTests.swift */; };
 		ECE7CAF61EC2921C0038B6A5 /* all.json in Resources */ = {isa = PBXBuildFile; fileRef = ECE7CAF51EC2921C0038B6A5 /* all.json */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +44,8 @@
 		CECF53041F2CEE2F00A72B98 /* FetchManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchManager.swift; sourceTree = "<group>"; };
 		CECF53071F2CEFF900A72B98 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		CECF530A1F2D007F00A72B98 /* ItemCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCollectionViewCell.swift; sourceTree = "<group>"; };
+		CECF530D1F2D5B9900A72B98 /* MercariTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MercariTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		CECF530E1F2D5B9A00A72B98 /* MercariTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MercariTests.swift; sourceTree = "<group>"; };
 		ECE7CAD21EC290350038B6A5 /* Mercari.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mercari.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECE7CAD51EC290350038B6A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ECE7CADA1EC290350038B6A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -51,8 +53,6 @@
 		ECE7CADF1EC290350038B6A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ECE7CAE11EC290350038B6A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ECE7CAE61EC290350038B6A5 /* MercariTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MercariTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		ECE7CAEA1EC290350038B6A5 /* MercariTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MercariTests.swift; sourceTree = "<group>"; };
-		ECE7CAEC1EC290350038B6A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ECE7CAF51EC2921C0038B6A5 /* all.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = all.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -119,15 +119,24 @@
 				ECE7CADE1EC290350038B6A5 /* LaunchScreen.storyboard */,
 				ECE7CAE11EC290350038B6A5 /* Info.plist */,
 				ECE7CAF51EC2921C0038B6A5 /* all.json */,
+				CECF53101F2D5BA500A72B98 /* UnitTests */,
 			);
 			name = Others;
+			sourceTree = "<group>";
+		};
+		CECF53101F2D5BA500A72B98 /* UnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				CECF530D1F2D5B9900A72B98 /* MercariTests-Bridging-Header.h */,
+				CECF530E1F2D5B9A00A72B98 /* MercariTests.swift */,
+			);
+			name = UnitTests;
 			sourceTree = "<group>";
 		};
 		ECE7CAC91EC290350038B6A5 = {
 			isa = PBXGroup;
 			children = (
 				ECE7CAD41EC290350038B6A5 /* Mercari */,
-				ECE7CAE91EC290350038B6A5 /* MercariTests */,
 				ECE7CAD31EC290350038B6A5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -152,15 +161,6 @@
 				CECF530C1F2D3E4500A72B98 /* Others */,
 			);
 			path = Mercari;
-			sourceTree = "<group>";
-		};
-		ECE7CAE91EC290350038B6A5 /* MercariTests */ = {
-			isa = PBXGroup;
-			children = (
-				ECE7CAEA1EC290350038B6A5 /* MercariTests.swift */,
-				ECE7CAEC1EC290350038B6A5 /* Info.plist */,
-			);
-			path = MercariTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,6 +219,8 @@
 					};
 					ECE7CAE51EC290350038B6A5 = {
 						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = VF725LAA9U;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 						TestTargetID = ECE7CAD11EC290350038B6A5;
 					};
@@ -303,7 +305,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ECE7CAEB1EC290350038B6A5 /* MercariTests.swift in Sources */,
+				CECF530F1F2D5B9A00A72B98 /* MercariTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,6 +439,7 @@
 				DEVELOPMENT_TEAM = VF725LAA9U;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Mercari/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mercari.Mercari;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -452,6 +455,7 @@
 				DEVELOPMENT_TEAM = VF725LAA9U;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Mercari/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mercari.Mercari;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -465,10 +469,14 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = VF725LAA9U;
 				INFOPLIST_FILE = MercariTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mercari.MercariTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Mercari/MercariTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mercari.app/Mercari";
 			};
@@ -479,10 +487,13 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = VF725LAA9U;
 				INFOPLIST_FILE = MercariTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mercari.MercariTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Mercari/MercariTests-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mercari.app/Mercari";
 			};

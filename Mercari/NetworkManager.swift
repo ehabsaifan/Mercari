@@ -98,6 +98,7 @@ extension NetworkManager{
 }
 
 extension NetworkManager{
+    ///Makes sure dispatch to main thread
     class func completion(json : json?, error : NSError?, completion : jsonResponse){
         OperationQueue.main.addOperation { () -> Void in
             if let completion = completion{
@@ -106,6 +107,7 @@ extension NetworkManager{
         }
     }
     
+    ///Makes sure dispatch to main thread
     class func completion(path : String, image: UIImage?, error : NSError?, completion : ImageResponse){
         OperationQueue.main.addOperation { () -> Void in
             if let completion = completion{
