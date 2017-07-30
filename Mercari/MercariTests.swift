@@ -21,27 +21,24 @@ class MercariTests: XCTestCase {
         super.tearDown()
     }
     
+    ///FetchManager tests
     func testGetItemsInFetchManager() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         FetchManager.getItems { (success, error) in
-            XCTAssertTrue(success == true, "Error getting items in FetchManager")
+            XCTAssertTrue(success, "Error getting items in FetchManager")
         }
     }
     
+    ///NetworkManager tests
     func testGetItemsInNetworkManager() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         NetworkManager.getItems { (json, error) in
-            XCTAssertTrue(json != nil, "Error getting items in NetworkManager")
+            XCTAssertNotNil(json, "Error getting items in NetworkManager")
         }
     }
-    
-    func testDownloadImage() {
-        
-    }
-    
-    
+
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measure {

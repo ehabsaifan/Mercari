@@ -58,25 +58,14 @@ class ItemsCollectionViewController: UICollectionViewController, UICollectionVie
         }
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
-
     // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
+        // When there is no items we will display one default cell (Null cell)
         let count = (self.items.count > 0 ? items.count: 1)
         return count
     }
@@ -89,6 +78,8 @@ class ItemsCollectionViewController: UICollectionViewController, UICollectionVie
             return cell
         }
         
+        //Null cell to be displayed with a text when there is no
+        //items.
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: defaultIdentifier, for: indexPath) as! DefaultCollectionViewCell
     
         return cell
@@ -98,6 +89,7 @@ class ItemsCollectionViewController: UICollectionViewController, UICollectionVie
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
+        //When there is no items we will display a full screen default cell
         if self.items.count == 0 {
             return CGSize(width: collectionView.bounds.width-20, height: collectionView.bounds.height-20)
         }
