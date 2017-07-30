@@ -19,16 +19,43 @@ class ItemsCollectionViewController: UICollectionViewController, UICollectionVie
         }
     }
     
+    var minCellWidth: CGFloat {
+        //iPhone 5 width
+        let minScreenSize = 320
+        //Added in storyboard
+        let sectionInset = 20
+        let minSpacing = 8
+        let minCellCountInARow = 3
+        return CGFloat(((minScreenSize - sectionInset)/minCellCountInARow) - minSpacing)
+    }
+    
+    var refreshController = UIRefreshControl()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        self.configureRefreshController()
+        
         NotificationCenter.default.addObserver(forName: Notification.Name(rawValue: "\(CustomNotification.ItemsHasBeenFetched)"), object: nil, queue: OperationQueue.main) { (not) -> Void in
-            self.items = FetchManager.shared.items
+           self.items = FetchManager.shared.items
         }
     }
     
     deinit {
         NotificationCenter.default.removeObserver(self)
+    }
+    
+    private func configureRefreshController() {
+        self.collectionView?.alwaysBounceVertical = true
+        self.refreshController.tintColor = UIColor.blue
+        self.refreshController.addTarget(self, action: #selector(fetchData), for: .valueChanged)
+        self.collectionView?.addSubview(self.refreshController)
+    }
+    
+    @objc private func fetchData(){
+        FetchManager.getItems { (suceess, error) in
+            self.refreshController.endRefreshing()
+        }
     }
 
     /*
@@ -75,8 +102,7 @@ class ItemsCollectionViewController: UICollectionViewController, UICollectionVie
             return CGSize(width: collectionView.bounds.width-20, height: collectionView.bounds.height-20)
         }
 
-        let minWidth = (320 - 20)/3 - 8
-        let cellSize = CGSize(width: minWidth, height: 130)
+        let cellSize = CGSize(width: self.minCellWidth, height: 130)
         return cellSize
     }
     
