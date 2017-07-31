@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # mercari-ios-test
 For Technical interview
 
